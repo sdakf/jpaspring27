@@ -1,5 +1,10 @@
 package pl.sda.jpaspring;
 
+import lombok.Builder;
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
 import javax.persistence.*;
 
 @Entity
@@ -15,4 +20,13 @@ public class Product {
 
     @Enumerated(EnumType.STRING)
     private ProductType productType;
+
+    public Product() {
+    }
+
+    public Product(String isbn, String productName, ProductType productType) {
+        this.isbn = isbn;
+        this.productName = productName;
+        this.productType = productType;
+    }
 }
