@@ -17,9 +17,13 @@ public class CustomerController {
     }
 
     @RequestMapping("/addCustomer") //to miejsce będzie reagować na requesty pod adres "/addCustomer"
-    public String addCustomer(String firstNameInputValue, String surnameInputValue) { //te wartości przyjdą z formularza
+    public String addCustomer(String firstNameInputValue,
+                              String surnameInputValue,
+                              String peselInputValue) { //te wartości przyjdą z formularza
 
-        customerService.addCustomer(firstNameInputValue, surnameInputValue);
+        customerService.addCustomer(firstNameInputValue,
+                surnameInputValue,
+                peselInputValue);
         return "customersForm"; // to jest nazwa pliku html, który zostanie wyświetlony
     }
 
