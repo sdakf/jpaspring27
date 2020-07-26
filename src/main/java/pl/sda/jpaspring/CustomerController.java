@@ -11,7 +11,7 @@ public class CustomerController {
     @Autowired //Spring uzupełni w tym miejscu referencję do serwisu - DEPENDENCY INJECTION
     private CustomerService customerService;
 
-    @RequestMapping("/")
+    @RequestMapping("/customers")
     public String customersForm() {
         return "customersForm"; // to jest nazwa pliku html, który zostanie wyświetlony
     }

@@ -10,6 +10,8 @@ public class ProductsService {
     private ProductsRepository productsRepository;
 
     public void addProduct(String productNameInput, String isbnInput, String productTypeInput) {
-
+        ProductType productType = ProductType.valueOf(productTypeInput.toUpperCase());
+        Product product = new Product(isbnInput, productNameInput, productType);
+        productsRepository.save(product);
     }
 }
