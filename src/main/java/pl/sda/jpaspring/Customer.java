@@ -1,12 +1,10 @@
 package pl.sda.jpaspring;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
-public class Customer  {
+public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -14,13 +12,29 @@ public class Customer  {
     private String surname;
     private String pesel;
 
+    @OneToMany
+    private List<Product> products;
+
+
     public Customer() {
 
     }
 
-    public Customer( String firstName, String surname, String pesel) {
+    public Customer(String firstName, String surname, String pesel, List<Product> products) {
         this.firstName = firstName;
         this.surname = surname;
         this.pesel = pesel;
+        this.products = products;
+    }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", surname='" + surname + '\'' +
+                ", pesel='" + pesel + '\'' +
+                ", products=" + products +
+                '}';
     }
 }

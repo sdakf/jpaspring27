@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Sklep</title>
+</head>
+<body>
+<a href="/customers">KLIENCI</a>
+<a href="/products">PRODUKTY</a> <br>
+Klienci: <br>
+<ul>
+   <li th:each="client : ${cccccustomers}">
+       <p th:text="${client}"></p>
+   </li>
+</ul>
+
+Produkty: <br>
+<ul>
+    <li th:each="product : ${products}">
+        <p th:text="${product}"></p>
+    </li>
+</ul>
+
+</body>
+</html>

@@ -1,10 +1,5 @@
 package pl.sda.jpaspring;
 
-import lombok.Builder;
-import lombok.NoArgsConstructor;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-
 import javax.persistence.*;
 
 @Entity
@@ -28,5 +23,15 @@ public class Product {
         this.isbn = isbn;
         this.productName = productName;
         this.productType = productType;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id=" + id +
+                ", isbn='" + isbn + '\'' +
+                ", productName='" + productName + '\'' +
+                ", productType=" + productType +
+                '}';
     }
 }
